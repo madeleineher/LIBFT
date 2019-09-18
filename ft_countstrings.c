@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_countstrings.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhernand <mhernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:47:03 by mhernand          #+#    #+#             */
-/*   Updated: 2019/01/17 16:26:21 by mhernand         ###   ########.fr       */
+/*   Created: 2019/08/07 19:14:37 by mhernand          #+#    #+#             */
+/*   Updated: 2019/08/07 19:30:24 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int			ft_countstrings(char **strings)
 {
-	int i;
+	int		count;
+	int		i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	count = 0;
+	i = -1;
+	while (strings[++i])
+		count++;
+	return (count);
 }

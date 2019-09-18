@@ -6,7 +6,7 @@
 #    By: mhernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/26 20:04:08 by mhernand          #+#    #+#              #
-#    Updated: 2018/12/14 11:40:37 by mhernand         ###   ########.fr        #
+#    Updated: 2019/09/06 16:06:10 by mhernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,22 +28,27 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 	 ft_strequ.c ft_strnequ.c ft_putchar.c ft_putendl_fd.c\
 	 ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
 	 ft_putstr_fd.c ft_itoa.c ft_strjoin.c ft_strsplit.c ft_strsub.c \
-	 ft_strtrim.c ft_putchar.c ft_putnbr_fd.c ft_lstnew.c \
-	 ft_lstadd.c
+	 ft_strtrim.c ft_putchar.c ft_putnbr_fd.c \
+	 ft_strclen.c get_next_line.c ft_delsplit.c ft_charfreq.c ft_countstrings.c\
+	 ft_iseven.c ft_strfree.c
 
 OBJECTS = $(SRCS:.c=.o)
 
-all:$(NAME)
+superfast:
+	@make -j8 all
+
+all:
+	@make $(NAME)
 
 $(NAME):$(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 clean:
-	rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS)
 	
-fclean: clean
-	rm -rf $(NAME)
+fclean: clean 
+	@rm -rf $(NAME)
 
 re: fclean all
 

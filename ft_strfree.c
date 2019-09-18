@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhernand <mhernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:47:03 by mhernand          #+#    #+#             */
-/*   Updated: 2019/01/17 16:26:21 by mhernand         ###   ########.fr       */
+/*   Created: 2019/09/06 16:04:06 by mhernand          #+#    #+#             */
+/*   Updated: 2019/09/06 16:05:26 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_strfree(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (str != NULL)
+	{
+		free(str);
+		str = NULL;
+	}
 }

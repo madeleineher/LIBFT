@@ -6,7 +6,7 @@
 /*   By: mhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 21:39:44 by mhernand          #+#    #+#             */
-/*   Updated: 2018/12/05 02:12:40 by mhernand         ###   ########.fr       */
+/*   Updated: 2019/05/10 17:36:06 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ static char	*ft_wordtable(char const *s, char c, int *i)
 	while (s[k] != c && s[k] != '\0')
 	{
 		if ((s[k] != c && s[k + 1] == c) || (s[k] != c && s[k + 1] == '\0'))
-		{
 			mini_tab = ft_strsub(s, (size_t)*i, ((size_t)k - *i + 1));
-		}
 		k++;
 		j++;
 	}
@@ -67,6 +65,7 @@ static char	**ft_findwords(char const *s, char c)
 	int		i;
 	int		x;
 
+	tab = NULL;
 	if (!(tab = (char**)malloc(sizeof(char*) * (nb_words(s, c)))))
 		return (NULL);
 	n_w = nb_words(s, c) - 1;

@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_delsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhernand <mhernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 17:49:08 by mhernand          #+#    #+#             */
-/*   Updated: 2018/12/12 20:26:30 by mhernand         ###   ########.fr       */
+/*   Created: 2019/04/19 20:01:43 by mhernand          #+#    #+#             */
+/*   Updated: 2019/04/23 17:42:04 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void		ft_delsplit(char **tab)
 {
-	(new)->next = (*alst);
-	(*alst) = new;
+	int		i;
+
+	i = 0;
+	if (!tab)
+		return ;
+	while (tab[i] != NULL)
+	{
+		if (tab[i])
+		{
+			free(tab[i]);
+			tab[i] = NULL;
+		}
+		i++;
+	}
+	free(tab);
+	tab = NULL;
 }

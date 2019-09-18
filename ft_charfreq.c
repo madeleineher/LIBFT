@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_charfreq.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhernand <mhernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:47:03 by mhernand          #+#    #+#             */
-/*   Updated: 2019/01/17 16:26:21 by mhernand         ###   ########.fr       */
+/*   Created: 2019/08/07 18:46:02 by mhernand          #+#    #+#             */
+/*   Updated: 2019/08/07 18:50:25 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int			ft_charfreq(char *str, int c)
 {
-	int i;
+	size_t	freq;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	freq = 0;
+	while (*str)
+	{
+		if (*str == c)
+			freq++;
+		str++;
+	}
+	return (freq);
 }

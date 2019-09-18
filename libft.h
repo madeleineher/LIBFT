@@ -6,7 +6,7 @@
 /*   By: mhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:55:00 by mhernand          #+#    #+#             */
-/*   Updated: 2018/12/14 11:40:06 by mhernand         ###   ########.fr       */
+/*   Updated: 2019/09/06 16:05:57 by mhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
+size_t				ft_strclen(const char *str, int c);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *c);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
@@ -69,14 +70,9 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
-typedef struct		s_list {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
-
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstadd(t_list **alst, t_list *new);
-
+void				ft_delsplit(char **tab);
+int					ft_charfreq(char *str, int c);
+int					ft_countstrings(char **strings);
+int					ft_iseven(int x);
+void				ft_strfree(char *str);
 #endif
